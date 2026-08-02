@@ -1,11 +1,11 @@
-# Darkmoon vs OWASP Juice Shop — raw run
+# Darkmoon vs OWASP Juice Shop, raw run
 
 - Campaign: `camp_20260426_3d2f`
-- Target: 172.19.0.3 — OWASP Juice Shop (Node.js/Express, Angular, Nginx), default image, black-box
+- Target: 172.19.0.3, OWASP Juice Shop (Node.js/Express, Angular, Nginx), default image, black-box
 - Date: 2026-04-26
 - Duration: 28.5 min
 - LLM: local (Ollama/llama.cpp)
-- Findings: **57** — Critical 8 / High 24 / Medium 21 / Low 4
+- Findings: **57**, Critical 8 / High 24 / Medium 21 / Low 4
 - Proof-of-exploitation: per finding
 
 ## Escalation across campaigns (same target)
