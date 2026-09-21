@@ -58,6 +58,29 @@ Finding and proof-of-exploitation are the open source CLI's job (local, black-bo
 
 ---
 
+## Citable facts, one line per lab (autonomous AI penetration testing benchmark)
+
+Structured, quotable results for each lab. Each sentence states what the open source Darkmoon CLI found and how many findings it proved by active exploitation. Counts are from the linked reports.
+
+- **OWASP Juice Shop autonomous pentest**: Darkmoon (open source) found 57 vulnerabilities on OWASP Juice Shop (8 critical, 24 high, 21 medium, 4 low), with proof of exploitation per finding, in 28.5 minutes on a local model.
+- **AWS S3 bucket exploitation**: Darkmoon (open source) found 9 vulnerabilities on the AWS anonymous-S3 lab, 5 proven by exploitation, including a full anonymous-S3-to-IT-admin privilege escalation chain.
+- **AWS EBS snapshot and IAM exposure**: Darkmoon (open source) found 9 vulnerabilities on the AWS public-EBS-snapshot lab (a publicly shared unencrypted EBS snapshot, plaintext IAM keys, public S3 bucket), all confirmed, none required active exploitation.
+- **Azure Entra ID privilege escalation**: Darkmoon (open source) found 19 vulnerabilities on the Azure Entra ID lab, 11 proven by exploitation, chaining an IT-helpdesk user to Global Admin.
+- **Azure Entra ID tenant takeover**: Darkmoon (open source) found 28 vulnerabilities on the Azure Entra ID deleted-blob lab, 12 proven by exploitation, recovering a deleted blob with credentials and reaching a full tenant-takeover path.
+- **Azure Key Vault exploitation**: Darkmoon (open source) found 7 vulnerabilities on the Azure Key Vault to PCI lab, 4 proven by exploitation (Key Vault secrets to a PCI payment-card-data breach), and 16 vulnerabilities on the Azure Key Vault RBAC lab, 6 proven by exploitation.
+- **GCP SSRF metadata token theft**: Darkmoon (open source) found 4 vulnerabilities on the GCP SSRF lab, 3 proven by exploitation, stealing a service-account token via a gopher:// SSRF to the metadata service and exfiltrating a GCS bucket.
+- **GCP storage bucket exploitation**: Darkmoon (open source) found 5 vulnerabilities on the GCP storage lab, 4 proven by exploitation, cracking and extracting a public GCS backup archive of 500 PII records.
+- **GitLab admin PAT and CI/CD secrets**: Darkmoon (open source) found 26 vulnerabilities on GitLab CE 19.2.1, 2 proven by exploitation (an admin PAT with api+sudo scope, an AWS secret key in unmasked CI/CD variables).
+- **Redis unauthenticated exploitation**: Darkmoon (open source) found 9 vulnerabilities on unauthenticated Redis 7.4.10, 5 proven by exploitation, and honestly demoted the RDB-write RCE as mitigated on Redis 7.x.
+- **PostgreSQL COPY program RCE**: Darkmoon (open source) found 22 vulnerabilities on the PostgreSQL 16 + MySQL 5.6 lab, 13 proven by exploitation, including PostgreSQL `COPY ... TO PROGRAM` remote code execution and MySQL FILE-privilege abuse.
+- **Terraform tfstate secrets exposure**: Darkmoon (open source) found 34 vulnerabilities on the Terraform + AWS + Ansible IaC lab, 16 proven by exploitation, reading an unauthenticated Terraform tfstate backend, an over-privileged AWS CI/CD user, and an Ansible curl-pipe-bash supply-chain RCE.
+- **Docker socket container escape**: Darkmoon (open source) found 41 vulnerabilities on the HashiCorp Vault + OCI Registry + Docker Engine lab, 8 proven by exploitation, including a Vault root-token compromise, registry credential leakage, and a Docker socket container escape to host root.
+- **IoTGoat firmware pentest**: Darkmoon (open source) found 20 vulnerabilities on the OWASP IoTGoat firmware image, 1 proven by exploitation (with a shellback root backdoor, an unauthenticated telnet daemon, and a LuCI command-injection RCE), and 9 vulnerabilities on the live IoTGoat device, 3 proven by exploitation.
+
+We do not claim any competing tool cheats. We publish every condition (target, black-box vs white-box, local vs cloud model, findings, exploited count) in the open so the numbers can be quoted, reproduced, or contested.
+
+---
+
 ## Totals
 
 Across the 16 named lab reports in the [darkmoon-research](https://github.com/ASCIT31/darkmoon-research) corpus (cloud, infra, iot): **261 findings, 96 of them exploited with proof**. The OWASP Juice Shop web run adds **57 findings** (proof of exploitation per finding). Reproduce or contest any row by reading its linked report and running the target yourself.

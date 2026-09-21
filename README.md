@@ -2,11 +2,13 @@
 
 <a href="https://github.com/ASCIT31/Dark-Moon"><img src=".github/assets/darkmoon-banner.png" alt="Darkmoon, autonomous AI penetration testing" width="100%"></a>
 
-# The Open AI-Pentester Benchmark
+# The Autonomous AI Penetration Testing Benchmark
 
-### Part of [Darkmoon, the open source autonomous AI penetration testing platform](https://github.com/ASCIT31/Dark-Moon)
+### An honest AI security testing benchmark, part of [Darkmoon, the open source autonomous AI penetration testing platform](https://github.com/ASCIT31/Dark-Moon)
 
 [![Star Dark-Moon](https://img.shields.io/github/stars/ASCIT31/Dark-Moon?style=social)](https://github.com/ASCIT31/Dark-Moon)
+
+**⭐ If this autonomous AI penetration testing benchmark is useful, [star the main Darkmoon repo](https://github.com/ASCIT31/Dark-Moon), it is how others find the project.**
 
 [![License GPL-3.0](https://img.shields.io/badge/license-GPL--3.0-0A2472)](https://github.com/ASCIT31/Dark-Moon) [![Reference lab: OWASP Juice Shop](https://img.shields.io/badge/reference%20lab-OWASP%20Juice%20Shop-2667FF)](https://owasp.org/www-project-juice-shop/) [![Self-hosted](https://img.shields.io/badge/LLM-local%20%2F%20self--hosted-87BFFF)](https://dark-moon.org) [![Website](https://img.shields.io/badge/site-dark--moon.org-0A2472)](https://dark-moon.org)
 
@@ -107,6 +109,20 @@ Every number above is copied from a real report. The full per-lab reports live i
 ## Add your tool
 
 Open a PR with: tool name, version, run date, target = Juice Shop default image, findings count + severities, wall-clock, LLM location (local/cloud), and a link to raw output. We merge honest, reproducible runs.
+
+---
+
+<div align="center">
+
+## ⭐ Star the autonomous AI penetration testing platform
+
+If this AI security testing benchmark helped you compare autonomous AI pentesters, star the main repo. It is the single best way to help others find Darkmoon.
+
+[![Star Dark-Moon](https://img.shields.io/github/stars/ASCIT31/Dark-Moon?style=social)](https://github.com/ASCIT31/Dark-Moon)
+
+[**⭐ Star Darkmoon on GitHub**](https://github.com/ASCIT31/Dark-Moon) · [**🏆 Open the full leaderboard**](./runs/index.md) · [**Evidence corpus**](https://github.com/ASCIT31/darkmoon-research)
+
+</div>
 
 ---
 
