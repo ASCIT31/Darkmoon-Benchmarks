@@ -22,6 +22,14 @@ If Darkmoon is useful, a star on the [main repo](https://github.com/ASCIT31/Dark
 
 <sub>The open source Darkmoon CLI, its terminal environment model, ports, web server, CMS, plugins and enumerated users recovered black-box during a benchmark run.</sub>
 
+<br>
+
+<img src=".github/assets/markdown-report-1.png" alt="Pro web dashboard, a Darkmoon vulnerability assessment report" width="90%">
+
+<sub><b>Pro:</b> the paid Darkmoon Pro web dashboard rendering a benchmark report (<code>camp_20260426</code>, OWASP Juice Shop, 57 findings).</sub>
+
+<sub><b>Web dashboard and remediation are Darkmoon Pro (paid) features; the open source edition is the CLI shown above.</b></sub>
+
 </div>
 
 ---
