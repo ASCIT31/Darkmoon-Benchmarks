@@ -19,3 +19,9 @@
 | camp_20260426_3d2f | 2026-04-26 | 28.5 min | **57** | CRITICAL |
 
 Source: Darkmoon live demo dashboard (demo.dark-moon.org).
+
+## Open source vs Pro on this run
+
+The finding and the proof of exploitation for all 57 vulnerabilities are produced by the open source Darkmoon CLI (local, black-box, privacy-preserving). Of the 57 findings, 42 were then auto-remediated to reviewed pull requests. That remediation-to-PR step, together with the web dashboard, is a Darkmoon **Pro** (paid) feature, so the 42 of 57 remediation number is a Pro-tier result, not an open source one. In the open source edition you get the finding and the proof, you carry out the fix yourself.
+
+See the full [benchmark leaderboard](./index.md) for the per-lab index across web, cloud, infrastructure and IoT.

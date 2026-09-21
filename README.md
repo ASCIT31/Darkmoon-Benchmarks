@@ -14,7 +14,7 @@
 
 If Darkmoon is useful, a star on the [main repo](https://github.com/ASCIT31/Dark-Moon) helps others find it.
 
-[**⭐ Star DarkMoon**](https://github.com/ASCIT31/Dark-Moon) · [**▶️ Watch the 60s demo**](https://youtu.be/1bFRVuMkZzY?si=peKxwuxzbXBnb2zO) · [**Darkmoon autonomous AI penetration testing**](https://dark-moon.org) · [**AI pentest tool comparison**](https://dark-moon.org/comparison/) · [**remediation benchmark (Pro)**](https://dark-moon.org/remediation-benchmark/) · [**visual walkthrough**](https://dark-moon.org/walkthrough/) · [**evidence corpus**](https://github.com/ASCIT31/darkmoon-research)
+[**⭐ Star DarkMoon**](https://github.com/ASCIT31/Dark-Moon) · [**🏆 Leaderboard**](./runs/index.md) · [**▶️ Watch the 60s demo**](https://youtu.be/1bFRVuMkZzY?si=peKxwuxzbXBnb2zO) · [**Darkmoon autonomous AI penetration testing**](https://dark-moon.org) · [**AI pentest tool comparison**](https://dark-moon.org/comparison/) · [**remediation benchmark (Pro)**](https://dark-moon.org/remediation-benchmark/) · [**visual walkthrough**](https://dark-moon.org/walkthrough/) · [**evidence corpus**](https://github.com/ASCIT31/darkmoon-research)
 
 <br>
 
@@ -68,6 +68,27 @@ We do **not** claim anyone cheats. We just publish every condition in the open.
 | PentestGPT | *run pending* | | | | | | cloud | partial | ⬜ PR welcome |
 
 > Darkmoon's numbers are from real runs (dashboard: `camp_20260426_3d2f`, 57 findings, 28.5 min, escalating 14→28→38→44→49→57 across 6 campaigns). **Every other row is an open invitation:** run your tool with the harness below and send a PR, this is a community leaderboard, not a marketing page.
+
+> On the Juice Shop run, 42 of the 57 findings were auto-remediated to reviewed pull requests. That remediation-to-PR step is a Darkmoon **Pro** (paid) feature, so 42 of 57 is a Pro-tier result. The open source CLI produces the finding and the proof of exploitation for all 57.
+
+## The multi-surface leaderboard (real runs across web, cloud, infra, IoT)
+
+Juice Shop is the reference web lab. Beyond it, Darkmoon has been run against named, reproducible cloud, infrastructure and IoT labs, and each run has a full report with one section per finding and evidence. The **[benchmark leaderboard](./runs/index.md)** is the single index of every run, with per-severity finding counts and exploited counts pulled directly from each report.
+
+| Surface | Labs | Findings | Exploited |
+|---|:--:|:--:|:--:|
+| web (OWASP Juice Shop) | 1 | 57 | proof per finding |
+| cloud (AWS, Azure, GCP) | 8 | 97 | 45 |
+| infrastructure (databases, CI/CD, secret stores, IaC) | 6 | 135 | 47 |
+| iot (OWASP IoTGoat) | 2 | 29 | 4 |
+
+Every number above is copied from a real report. The full per-lab reports live in the [darkmoon-research](https://github.com/ASCIT31/darkmoon-research) evidence corpus, and the [leaderboard](./runs/index.md) links each row straight to its report. Finding and proof are the open source CLI's job (local, black-box, privacy-preserving); the web dashboard and automated remediation are Darkmoon **Pro** (paid) features.
+
+<div align="center">
+
+[**⭐ Star Darkmoon, the open source autonomous AI penetration testing platform**](https://github.com/ASCIT31/Dark-Moon) · [**Open the full leaderboard**](./runs/index.md)
+
+</div>
 
 ## Methodology (so it can't be dismissed)
 
