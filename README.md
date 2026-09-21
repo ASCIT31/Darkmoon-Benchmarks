@@ -18,9 +18,9 @@ If Darkmoon is useful, a star on the [main repo](https://github.com/ASCIT31/Dark
 
 <br>
 
-<img src=".github/assets/markdown-report-1.png" alt="A real Darkmoon vulnerability assessment report from the benchmark run against OWASP Juice Shop" width="90%">
+<img src=".github/assets/cli_enumeration.png" alt="Darkmoon open source CLI, terminal environment model summary from black-box recon of the target" width="90%">
 
-<sub>A real Darkmoon report from the benchmark run <code>camp_20260426</code>, OWASP Juice Shop, 57 findings with proof of exploitation.</sub>
+<sub>The open source Darkmoon CLI, its terminal environment model, ports, web server, CMS, plugins and enumerated users recovered black-box during a benchmark run.</sub>
 
 </div>
 
