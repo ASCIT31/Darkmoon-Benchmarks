@@ -1,0 +1,63 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  data:
+    name: Dataset, scores, tables and figures
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: studies/llm-pentest-juice-shop-2026
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate dataset (parsing, ids, duplicates, score recomputation, aggregates, links)
+        run: python3 -I scripts/validate_results.py
+      - name: Markdown tables match the data
+        run: python3 -I scripts/generate_tables.py --check
+      - name: Figure sources and exported SVGs match the data
+        run: python3 -I diagrams/src/build_figures.py --check
+      - name: Scripts run end to end on a scratch copy
+        run: |
+          tmp="$(mktemp -d)"
+          cp -r ../../. "$tmp/"
+          cd "$tmp/studies/llm-pentest-juice-shop-2026"
+          python3 -I scripts/generate_tables.py
+          python3 -I diagrams/src/build_figures.py
+          git -C "$tmp" status --porcelain && git -C "$tmp" diff --exit-code
+      - name: CITATION.cff is valid
+        working-directory: .
+        run: |
+          pip install --quiet cffconvert==2.0.0
+          cffconvert --validate -i CITATION.cff
+
+  secrets:
+    name: Secret and private-data scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: gitleaks (full history)
+        run: docker run --rm -v "$PWD:/repo" zricethezav/gitleaks:v8.30.1 git /repo --redact --no-banner
+      - name: Pattern scan
+        run: |
+          set -u
+          fail=0
+          # key and token formats, anywhere in the repository
+          if grep -rInE --exclude-dir=.git '(sk-ant-[A-Za-z0-9_-]{10,}|sk-[A-Za-z0-9]{32,}|AKIA[0-9A-Z]{16}|ghp_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{30,}|xox[bpas]-[A-Za-z0-9-]{10,}|-----BEGIN [A-Z ]*PRIVATE KEY-----|eyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\.)' .; then fail=1; fi
+          # environment files, dumps and archives must never be committed
+          if git ls-files | grep -iE '(^|/)\.env($|\.)|\.(dump|sql|tar|tgz|gz|zip|7z|bak|jsonl)$'; then fail=1; fi
+          # study files: no e-mail address, IP address, localhost, host path or internal host name
+          if grep -rInE '([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}|\b([0-9]{1,3}\.){3}[0-9]{1,3}\b|localhost|127\.0\.0\.1|/home/|/Users/|[A-Za-z0-9-]+\.(internal|local|lan|corp)\b)' studies/; then fail=1; fi
+          exit $fail
