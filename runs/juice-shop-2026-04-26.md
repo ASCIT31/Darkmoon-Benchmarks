@@ -4,7 +4,7 @@
 - Target: 172.19.0.3, OWASP Juice Shop (Node.js/Express, Angular, Nginx), default image, black-box
 - Date: 2026-04-26
 - Duration: 28.5 min
-- LLM: local (Ollama/llama.cpp)
+- LLM: Claude Opus 4.6 (cloud frontier)
 - Findings: **57**, Critical 8 / High 24 / Medium 21 / Low 4
 - Proof-of-exploitation: per finding
 
@@ -22,6 +22,6 @@ Source: Darkmoon live demo dashboard (demo.dark-moon.org).
 
 ## Open source vs Pro on this run
 
-The finding and the proof of exploitation for all 57 vulnerabilities are produced by the open source Darkmoon CLI (local, black-box, privacy-preserving). Of the 57 findings, 42 were then auto-remediated to reviewed pull requests. That remediation-to-PR step, together with the web dashboard, is a Darkmoon **Pro** (paid) feature, so the 42 of 57 remediation number is a Pro-tier result, not an open source one. In the open source edition you get the finding and the proof, you carry out the fix yourself.
+The finding and the proof of exploitation for all 57 vulnerabilities are produced by the open source Darkmoon CLI (self-hosted, black-box, privacy-preserving). Of the 57 findings, 42 were then auto-remediated to reviewed pull requests. That remediation-to-PR step, together with the web dashboard, is a Darkmoon **Pro** (paid) feature, so the 42 of 57 remediation number is a Pro-tier result, not an open source one. In the open source edition you get the finding and the proof, you carry out the fix yourself.
 
 See the full [benchmark leaderboard](./index.md) for the per-lab index across web, cloud, infrastructure and IoT.

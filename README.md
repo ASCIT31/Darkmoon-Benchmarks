@@ -178,7 +178,7 @@ This benchmark takes the opposite approach. It runs Darkmoon on **public labs an
 
 | Tool | Findings | Critical | High | Med | Low | Time | LLM location | Proof-of-exploit | Reproducible here |
 |---|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-| **Darkmoon** | **57** | 8 | 24 | 21 | 4 | 28.5 min | **local (Ollama/llama.cpp)** | ✅ | ✅ (this repo) |
+| **Darkmoon** | **57** | 8 | 24 | 21 | 4 | 28.5 min | **cloud (Claude Opus 4.6)** | ✅ | ✅ (this repo) |
 
 > Darkmoon's numbers are from real runs (dashboard: `camp_20260426_3d2f`, 57 findings, 28.5 min, escalating 14 → 28 → 38 → 44 → 49 → 57 across 6 weekly campaigns against the same target). Raw run: [`runs/juice-shop-2026-04-26.md`](./runs/juice-shop-2026-04-26.md).
 
@@ -197,7 +197,7 @@ Juice Shop is the reference web lab. Beyond it, Darkmoon has been run against na
 | infrastructure (databases, CI/CD, secret stores, IaC) | 6 | 135 | 47 |
 | iot (OWASP IoTGoat) | 2 | 29 | 4 |
 
-Across the 16 named cloud, infrastructure and IoT reports: **261 findings, 96 of them proved by active exploitation**. The web run adds **57 findings** with proof of exploitation per finding. Every number above is copied from a real report. The full per-lab reports live in the [darkmoon-research](https://github.com/ASCIT31/darkmoon-research) evidence corpus, and the [leaderboard](./runs/index.md) links each row straight to its report. Finding and proof are the open source CLI's job (local, black-box, privacy-preserving); the web dashboard and automated remediation are Darkmoon **Pro** (paid) features.
+Across the 16 named cloud, infrastructure and IoT reports: **261 findings, 96 of them proved by active exploitation**. The web run adds **57 findings** with proof of exploitation per finding. Every number above is copied from a real report. The full per-lab reports live in the [darkmoon-research](https://github.com/ASCIT31/darkmoon-research) evidence corpus, and the [leaderboard](./runs/index.md) links each row straight to its report. Finding and proof are the open source CLI's job (self-hosted, black-box, privacy-preserving); the web dashboard and automated remediation are Darkmoon **Pro** (paid) features.
 
 [**Open the full leaderboard**](./runs/index.md)
 
@@ -205,7 +205,7 @@ Across the 16 named cloud, infrastructure and IoT reports: **261 findings, 96 of
 
 1. **Target**: OWASP Juice Shop, default docker image, unmodified, black-box (no source given to the tool).
 2. **Conditions**: single target, from a clean environment, wall-clock measured, findings de-duplicated, false positives excluded by manual review before counting (see the verification section below).
-3. **LLM**: the Juice Shop run used a **local** model (Ollama/llama.cpp), a deliberate choice: it proves the tool works without sending target data to a third party. The cloud, infrastructure and IoT lab reports were recorded on a cloud model, and each row's model is labeled in the leaderboard.
+3. **LLM**: the Juice Shop run used **Claude Opus 4.6** (cloud frontier), the same model as the cloud, infrastructure and IoT lab reports; each row's model is labeled in the leaderboard. Darkmoon also runs **fully local** (Ollama/llama.cpp) behind the Privacy Gateway, so target data stays on your own perimeter; local-model coverage depends on the model you run.
 4. **Scoring**: count of distinct, exploited or validated vulnerabilities with proof-of-exploitation, mapped to severity (CVSS).
 5. **Reproduce**: `docker run -p 3000:3000 bkimminich/juice-shop`, then run the tool against `http://localhost:3000`. Raw Darkmoon output for the reference run is in [`runs/juice-shop-2026-04-26.md`](./runs/juice-shop-2026-04-26.md), and the full [`/runs`](./runs) index links every lab to its report.
 
