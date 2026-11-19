@@ -268,7 +268,7 @@ These articles are outside the scope of this repository's benchmarks: nothing he
 
 ## About Darkmoon
 
-[Darkmoon](https://github.com/ASCIT31/Dark-Moon) is an open-source (GPL-3.0) autonomous AI penetration testing platform developed by ASC-IT. An orchestrating agent reads the signals of an authorized target and dispatches specialist agents (web, APIs, cloud, Active Directory, Kubernetes, CI/CD, AI/LLM endpoints) that run real offensive tools through a controlled, logged MCP interface and record the exact command and raw output behind every finding. It is self-hosted, can run on a local model, and its Privacy Gateway tokenizes real IPs, hosts and credentials so the model reasons on placeholders.
+[Darkmoon](https://github.com/ASCIT31/Dark-Moon) is an open-source (AGPL-3.0) autonomous AI penetration testing platform developed by ASC-IT. An orchestrating agent reads the signals of an authorized target and dispatches specialist agents (web, APIs, cloud, Active Directory, Kubernetes, CI/CD, AI/LLM endpoints) that run real offensive tools through a controlled, logged MCP interface and record the exact command and raw output behind every finding. It is self-hosted, can run on a local model, and its Privacy Gateway tokenizes real IPs, hosts and credentials so the model reasons on placeholders.
 
 The open-source edition is the command-line engine and its agents. The web dashboard and the remediation-to-pull-request agent are part of Darkmoon Pro, a paid edition.
 
