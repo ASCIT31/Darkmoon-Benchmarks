@@ -8,7 +8,7 @@ authors:
 repository-code: "https://github.com/ASCIT31/Darkmoon-Benchmarks"
 url: "https://github.com/ASCIT31/Darkmoon-Benchmarks"
 date-released: 2026-10-25
-license: GPL-3.0
+license: AGPL-3.0-only
 keywords:
   - penetration testing
   - large language models
@@ -19,7 +19,7 @@ abstract: >-
   Benchmark records of autonomous AI penetration testing. The study llm-pentest-juice-shop-2026
   publishes a minimised dataset of 21 runs of 16 tool x LLM configurations against OWASP Juice Shop
   (July to October 2026, BenchmarkAI platform), with recomputed difficulty-weighted scores, validation
-  scripts and a full statement of limitations. Datasets are licensed CC BY 4.0, code GPL-3.0.
+  scripts and a full statement of limitations. Datasets are licensed CC BY 4.0, code AGPL-3.0.
 references:
   - type: data
     title: "LLM-driven pentest configurations on OWASP Juice Shop (BenchmarkAI, 2026)"
@@ -33,4 +33,4 @@ references:
     authors:
       - name: "ASC-IT"
     url: "https://github.com/ASCIT31/Dark-Moon"
-    license: GPL-3.0
+    license: AGPL-3.0-only

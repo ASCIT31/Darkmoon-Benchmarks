@@ -38,7 +38,7 @@ python3 diagrams/src/build_figures.py --check
 
 ## Licences
 
-By contributing you agree that code and documentation are released under the repository licence (GPL-3.0) and that study datasets are released under the licence stated in their `datasets/` directory (CC BY 4.0 for `llm-pentest-juice-shop-2026`).
+By contributing you agree that code and documentation are released under the repository licence (AGPL-3.0-only, see [LICENSING.md](LICENSING.md)) and that study datasets are released under the licence stated in their `datasets/` directory (CC BY 4.0 for `llm-pentest-juice-shop-2026`).
 
 ## Security
 
