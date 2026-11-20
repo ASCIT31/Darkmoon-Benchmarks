@@ -62,7 +62,7 @@ Finding and proof-of-exploitation are the open source CLI's job (self-hosted, bl
 
 Structured, quotable results for each lab. Each sentence states what the open source Darkmoon CLI found and how many findings it proved by active exploitation. Counts are from the linked reports.
 
-- **OWASP Juice Shop autonomous pentest**: Darkmoon (open source) found 57 vulnerabilities on OWASP Juice Shop (8 critical, 24 high, 21 medium, 4 low), with proof of exploitation per finding, in 28.5 minutes on Claude Opus 4.6 (cloud frontier).
+- **OWASP Juice Shop autonomous pentest**: Darkmoon (open source) found 57 vulnerabilities on OWASP Juice Shop (8 critical, 24 high, 21 medium, 4 low), with proof of exploitation per finding, in 28.5 minutes on Claude Opus 4.6 (cloud frontier). Single team run, summary only, not independently reproduced: see the [correction](./juice-shop-2026-04-26.md#correction-2026-11-20).
 - **AWS S3 bucket exploitation**: Darkmoon (open source) found 9 vulnerabilities on the AWS anonymous-S3 lab, 5 proven by exploitation, including a full anonymous-S3-to-IT-admin privilege escalation chain.
 - **AWS EBS snapshot and IAM exposure**: Darkmoon (open source) found 9 vulnerabilities on the AWS public-EBS-snapshot lab (a publicly shared unencrypted EBS snapshot, plaintext IAM keys, public S3 bucket), all confirmed, none required active exploitation.
 - **Azure Entra ID privilege escalation**: Darkmoon (open source) found 19 vulnerabilities on the Azure Entra ID lab, 11 proven by exploitation, chaining an IT-helpdesk user to Global Admin.
