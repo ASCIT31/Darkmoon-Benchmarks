@@ -165,9 +165,9 @@ The records below predate the 2026 study and follow their own method (findings w
 
 <br>
 
-<img src=".github/assets/markdown-report-1.png" alt="Pro web dashboard, a Darkmoon vulnerability assessment report" width="90%">
+<img src=".github/assets/pro-report.png" alt="Pro web dashboard, a Darkmoon Security Assessment Report with contents rail, section tabs and Export PDF and Markdown buttons" width="90%">
 
-<sub><b>Pro:</b> the paid Darkmoon Pro web dashboard rendering a benchmark report (<code>camp_20260426</code>, OWASP Juice Shop, 57 findings).</sub>
+<sub><b>Pro:</b> the paid Darkmoon Pro web dashboard rendering a Security Assessment Report (Cyber Score, executive summary, framework assessment, treatment plan, attack paths, detailed findings), exportable to PDF and Markdown. Shown on a synthetic demo campaign.</sub>
 
 <sub><b>Web dashboard and remediation are Darkmoon Pro (paid) features; the open source edition is the CLI shown above.</b></sub>
 
