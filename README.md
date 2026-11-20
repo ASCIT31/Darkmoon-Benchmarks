@@ -6,7 +6,7 @@
 
 ### Open benchmark records of autonomous AI penetration testing: datasets, methods and limits, published so that every number can be checked
 
-[![validate](https://github.com/ASCIT31/Darkmoon-Benchmarks/actions/workflows/validate.yml/badge.svg)](https://github.com/ASCIT31/Darkmoon-Benchmarks/actions/workflows/validate.yml) [![Code: GPL-3.0](https://img.shields.io/badge/code-GPL--3.0-0A2472)](LICENSE) [![Data: CC BY 4.0](https://img.shields.io/badge/data-CC%20BY%204.0-2667FF)](studies/llm-pentest-juice-shop-2026/datasets/LICENSE) [![Reference lab: OWASP Juice Shop](https://img.shields.io/badge/reference%20lab-OWASP%20Juice%20Shop-2667FF)](https://owasp.org/www-project-juice-shop/) [![Website](https://img.shields.io/badge/site-dark--moon.org-0A2472)](https://dark-moon.org)
+[![validate](https://github.com/ASCIT31/Darkmoon-Benchmarks/actions/workflows/validate.yml/badge.svg)](https://github.com/ASCIT31/Darkmoon-Benchmarks/actions/workflows/validate.yml) [![Code: AGPL-3.0](https://img.shields.io/badge/code-AGPL--3.0-0A2472)](LICENSING.md) [![Data: CC BY 4.0](https://img.shields.io/badge/data-CC%20BY%204.0-2667FF)](studies/llm-pentest-juice-shop-2026/datasets/LICENSE) [![Reference lab: OWASP Juice Shop](https://img.shields.io/badge/reference%20lab-OWASP%20Juice%20Shop-2667FF)](https://owasp.org/www-project-juice-shop/) [![Website](https://img.shields.io/badge/site-dark--moon.org-0A2472)](https://dark-moon.org)
 
 **[Explore Darkmoon — Open-Source Autonomous AI Penetration Testing](https://github.com/ASCIT31/Dark-Moon)**
 
@@ -15,7 +15,7 @@
 </div>
 
 > [!IMPORTANT]
-> **License change.** Darkmoon Community is moving from the GNU GPL v3.0 to the GNU AGPL v3.0. Every commit published up to `edfe9cb` (27 October 2026) stays under the GNU GPL v3.0, and the contributions made by outside contributors before the switch also stay under the GNU GPL v3.0 (they are not relicensed). Details: [LICENSING.md](https://github.com/ASCIT31/Dark-Moon/blob/master/LICENSING.md).
+> **License change.** This repository moved from the GNU GPL v3.0 to the GNU AGPL v3.0 on 20 November 2026; every commit up to `ce15f49` (code and documentation) stays under the GNU GPL v3.0. Study datasets stay CC BY 4.0. Darkmoon Community is moving to the GNU AGPL v3.0 too (its commits up to `edfe9cb`, 27 October 2026, and earlier outside contributions stay GPL v3.0). Details: [LICENSING.md](LICENSING.md) · [Darkmoon LICENSING.md](https://github.com/ASCIT31/Dark-Moon/blob/master/LICENSING.md).
 
 ---
 
@@ -105,7 +105,7 @@ More figures: [BenchmarkAI pipeline](studies/llm-pentest-juice-shop-2026/diagram
 
 ## Datasets
 
-The study dataset lives in [`studies/llm-pentest-juice-shop-2026/datasets/`](studies/llm-pentest-juice-shop-2026/datasets/) and is licensed **CC BY 4.0** (code: GPL-3.0).
+The study dataset lives in [`studies/llm-pentest-juice-shop-2026/datasets/`](studies/llm-pentest-juice-shop-2026/datasets/) and is licensed **CC BY 4.0** (code: AGPL-3.0).
 
 | File | Content |
 |---|---|
@@ -264,7 +264,7 @@ These articles are outside the scope of this repository's benchmarks: nothing he
 
 ## Licence, citation and contributions
 
-- Code and documentation: GPL-3.0 ([LICENSE](LICENSE)). Study datasets: CC BY 4.0 ([notice](studies/llm-pentest-juice-shop-2026/datasets/LICENSE)).
+- Code and documentation: AGPL-3.0-only ([LICENSE](LICENSE), [LICENSING.md](LICENSING.md)); commits up to `ce15f49` stay GPL-3.0. Study datasets: CC BY 4.0 ([notice](studies/llm-pentest-juice-shop-2026/datasets/LICENSE)).
 - Cite with [CITATION.cff](CITATION.cff) (GitHub shows a "Cite this repository" button).
 - Contributions, replications and corrections: [CONTRIBUTING.md](CONTRIBUTING.md). We merge honest, reproducible runs with all conditions stated.
 - Security reports: [ASC-IT security policy](https://github.com/ASCIT31/.github/blob/main/SECURITY.md).
