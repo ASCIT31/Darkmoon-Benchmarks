@@ -181,11 +181,11 @@ This benchmark takes the opposite approach. It runs Darkmoon on **public labs an
 
 | Tool | Findings | Critical | High | Med | Low | Time | LLM location | Proof-of-exploit | Reproducible here |
 |---|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-| **Darkmoon** | **57** | 8 | 24 | 21 | 4 | 28.5 min | **cloud (Claude Opus 4.6)** | ✅ | ✅ (this repo) |
+| **Darkmoon** | **57** | 8 | 24 | 21 | 4 | 28.5 min | **cloud (Claude Opus 4.6)** | ✅ | summary only, single run ([correction](./runs/juice-shop-2026-04-26.md#correction-2026-11-20)) |
 
-> Darkmoon's numbers are from real runs (dashboard: `camp_20260426_3d2f`, 57 findings, 28.5 min, escalating 14 → 28 → 38 → 44 → 49 → 57 across 6 weekly campaigns against the same target). Raw run: [`runs/juice-shop-2026-04-26.md`](./runs/juice-shop-2026-04-26.md).
+> **Correction (2026-11-20).** Darkmoon's numbers come from **one run** by the Darkmoon team (`camp_20260426_3d2f`, 57 findings, 28.5 min), not independently reproduced; only a summary page is published, not the raw evidence. The « 14 → 28 → 38 → 44 → 49 → 57 » escalation previously quoted here came from the former demo site, whose earlier campaigns were copies of that one run with shifted dates and hand-set counts; it is not evidence. Details: [`runs/juice-shop-2026-04-26.md`](./runs/juice-shop-2026-04-26.md#correction-2026-11-20).
 
-> Of the 57 findings, 42 were auto-remediated to reviewed pull requests. That remediation-to-PR step is a Darkmoon **Pro** (paid) feature, so 42 of 57 is a Pro-tier result. The open source CLI produces the finding and the proof of exploitation for all 57.
+> Remediation: [ASCIT31/juice-shop](https://github.com/ASCIT31/juice-shop/pulls) holds 57 open remediation pull requests (opened 2026-09-16, none merged, not independently verified); the « 42 of 57 » figure previously quoted here has no supporting record. The remediation-to-PR step is a Darkmoon **Pro** (paid) feature. The open source CLI produces the finding and the proof of exploitation for all 57.
 
 > This is a living leaderboard, not a marketing page. To add another tool or lab, see [Add your tool](#add-your-tool), open a PR with a named target and a link to raw output, and we will merge honest, reproducible runs.
 
