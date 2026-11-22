@@ -29,7 +29,7 @@ Finding and proof-of-exploitation are the open source CLI's job (self-hosted, bl
 
 | Lab | Surface | Findings (C/H/M/L) | Exploited | Duration | Model | Full report |
 |---|:--:|:--:|:--:|:--:|:--:|---|
-| OWASP Juice Shop | web | **57** (8/24/21/4) | proof per finding | 28.5 min | opus-4-6 | [runs/juice-shop-2026-04-26.md](./juice-shop-2026-04-26.md) |
+| OWASP Juice Shop | web | **57** (8/24/21/4) | 24 (33 confirmed) | 28.5 min (on record) | opus-4-6 (declared) [^js] | [runs/juice-shop-2026-04-26.md](./juice-shop-2026-04-26.md) · [anonymised record on demo.dark-moon.org](https://demo.dark-moon.org/campaign/camp_20260426_3d2f919b?tab=findings) · [57 remediation PRs](https://github.com/ASCIT31/juice-shop/pulls?q=is%3Apr) |
 | AWS account (public EBS snapshot + S3 + IAM) | cloud | **9** (0/2/5/2) | 0 | n/r | opus-4-6 | [cloud/aws-pwnedlabs-online.md](https://github.com/ASCIT31/darkmoon-research/blob/main/reports/cloud/aws-pwnedlabs-online.md) |
 | AWS S3 anonymous to IT-admin chain | cloud | **9** (5/1/2/1) | 5 | n/r | opus-4-6 | [cloud/aws-s3-huge-logistics.md](https://github.com/ASCIT31/darkmoon-research/blob/main/reports/cloud/aws-s3-huge-logistics.md) |
 | Azure Entra ID priv-esc (helpdesk to Global Admin) | cloud | **19** (8/6/5/0) | 11 | n/r | opus-4-6 | [cloud/azure-bloodhound-pwnedlabs.md](https://github.com/ASCIT31/darkmoon-research/blob/main/reports/cloud/azure-bloodhound-pwnedlabs.md) |
@@ -47,14 +47,25 @@ Finding and proof-of-exploitation are the open source CLI's job (self-hosted, bl
 | OWASP IoTGoat (live device) | iot | **9** (4/3/2/0) | 3 | n/r | opus-4-6 | [iot/iotgoat-device-live.md](https://github.com/ASCIT31/darkmoon-research/blob/main/reports/iot/iotgoat-device-live.md) |
 | OWASP IoTGoat (firmware image) | iot | **20** (4/7/7/2) | 1 | n/r | opus-4-6 | [iot/iotgoat-firmware-image.md](https://github.com/ASCIT31/darkmoon-research/blob/main/reports/iot/iotgoat-firmware-image.md) |
 
+[^js]: Campaign `camp_20260426_3d2f919b`. Updated 2026-11-22: the anonymised record (57 findings with evidence, map, possible attack paths) is public on demo.dark-moon.org; it records **24 exploited and 33 confirmed** findings, which replaces the earlier « proof per finding ». The model is not stored in the campaign record (declared `claude-opus-4-6`). Ten other real, complete Juice Shop runs (26 Apr to 29 Sep 2026, `claude-opus-4-6` or `claude-sonnet-5`) are listed in the [run page's update](./juice-shop-2026-04-26.md#update-2026-11-22). Single team runs, not independently reproduced.
 [^info]: GitLab CE additionally carries 2 informational findings, so the report's Findings Summary total is 26.
 [^assembled]: The compiled server report generator returned a 500 for this campaign (a stale-reconciler flipped the long-running campaign to `stopped` before finalize completed, see the Darkmoon end-to-end validation notes). The report was assembled from the agent's pushed findings using the same schema, so every finding keeps its full per-finding evidence. Counts here come from that assembled report.
 
 ### Reading notes
 
-- **Duration**: `n/r` means the per-lab report does not record a wall-clock time. Only the OWASP Juice Shop run page records a duration (28.5 min), so that is the only duration published here. No run time is estimated for the other labs.
-- **Model**: all rows, including OWASP Juice Shop, were run on `claude-opus-4-6` (shown here as `opus-4-6`), the cloud frontier model documented for the Pro-stack validation wave in the Darkmoon end-to-end validation results (`E2E-RESULTS.md`). Darkmoon can also run fully local (Ollama/llama.cpp) behind the Privacy Gateway so target data never leaves your perimeter, but these published numbers are cloud-model numbers.
+- **Duration**: `n/r` means the per-lab report does not record a wall-clock time. Only the OWASP Juice Shop campaign record stores a duration (1,710 s = 28.5 min, the run's own `duration_seconds` field; about 55 min of server-side activity was reconstructed from its session log), so that is the only duration published here. No run time is estimated for the other labs.
+- **Model**: all rows, including OWASP Juice Shop, were run on `claude-opus-4-6` (shown here as `opus-4-6`), the cloud frontier model documented for the Pro-stack validation wave in the Darkmoon end-to-end validation results (`E2E-RESULTS.md`). Darkmoon can also run fully local (Ollama/llama.cpp) behind the Privacy Gateway so target data never leaves your perimeter, but these published numbers are cloud-model numbers. For OWASP Juice Shop the model is not stored in the campaign record, so it is declared, not verified. No Darkmoon result on Claude Opus 4.7 is published in this repository: there is no measured result for that model yet.
 - **Findings totals** are taken from each report's own Findings Summary table (the same table also reports the exploited count). Where a report also prints a `TOTAL` row, it matches the numbers above.
+
+---
+
+## Other model records (not leaderboard rows)
+
+These records cover other models. They are not added to the leaderboard above, because their protocol differs.
+
+- **LLM pentest study on OWASP Juice Shop (2026)**: 21 runs of 16 configurations, scored on Juice Shop's own challenge catalogue. Model labels exactly as recorded: `claude-sonnet-4-6` (C01, the only configuration whose tool is recorded: the Darkmoon open-source CLI), `qwen3.5:122b`, `gpt-oss:120b`, `Fable 5`, `claude-opus 4.5`, `glm-5.2`, `mistral-large-3`, `gpt-5.3-codex`, `claude-sonnet-5`, `gpt-5.6-sol`, `deepseek-v4-pro`, `kimi-k3`, `deepseek-r1:70b`, `gemini-3.1-pro-preview`, `gemini-2.5-flash-lite`, `mistral-large-4`. For C02 to C16 the tool is not recorded. Full table: [study README](../studies/llm-pentest-juice-shop-2026/README.md#comparison-table).
+- **Other real Juice Shop runs**: 10 complete runs (28 Jul to 29 Sep 2026) on `claude-opus-4-6` or `claude-sonnet-5`, listed with their counts in the [Juice Shop run update](./juice-shop-2026-04-26.md#update-2026-11-22).
+- **Azure AI Foundry provider validation (2026-11-22)**: smoke checks and single runs of Darkmoon Pro on models deployed in Azure AI Foundry (`gpt-5.3-codex`, `Kimi-K3.1-Pro`, `gpt-oss-120b`, `gpt-5-mini`; `DeepSeek-V4-Pro` blocked by quota; Claude not deployable on that subscription), against a vulnerable lab application: [azure-foundry-provider-validation-2026-11-22.md](./azure-foundry-provider-validation-2026-11-22.md). Not a benchmark.
 
 ---
 
@@ -62,7 +73,7 @@ Finding and proof-of-exploitation are the open source CLI's job (self-hosted, bl
 
 Structured, quotable results for each lab. Each sentence states what the open source Darkmoon CLI found and how many findings it proved by active exploitation. Counts are from the linked reports.
 
-- **OWASP Juice Shop autonomous pentest**: Darkmoon (open source) found 57 vulnerabilities on OWASP Juice Shop (8 critical, 24 high, 21 medium, 4 low), with proof of exploitation per finding, in 28.5 minutes on Claude Opus 4.6 (cloud frontier). Single team run, summary only, not independently reproduced: see the [correction](./juice-shop-2026-04-26.md#correction-2026-11-20).
+- **OWASP Juice Shop autonomous pentest**: Darkmoon (open source) found 57 vulnerabilities on OWASP Juice Shop (8 critical, 24 high, 21 medium, 4 low), 24 of them recorded as exploited and 33 as confirmed, in 28.5 minutes on record, on Claude Opus 4.6 (declared). Single team run, not independently reproduced; the anonymised record is public on [demo.dark-moon.org](https://demo.dark-moon.org/campaign/camp_20260426_3d2f919b?tab=findings) and each finding has an open remediation PR on [ASCIT31/juice-shop](https://github.com/ASCIT31/juice-shop/pulls?q=is%3Apr): see the [update](./juice-shop-2026-04-26.md#update-2026-11-22).
 - **AWS S3 bucket exploitation**: Darkmoon (open source) found 9 vulnerabilities on the AWS anonymous-S3 lab, 5 proven by exploitation, including a full anonymous-S3-to-IT-admin privilege escalation chain.
 - **AWS EBS snapshot and IAM exposure**: Darkmoon (open source) found 9 vulnerabilities on the AWS public-EBS-snapshot lab (a publicly shared unencrypted EBS snapshot, plaintext IAM keys, public S3 bucket), all confirmed, none required active exploitation.
 - **Azure Entra ID privilege escalation**: Darkmoon (open source) found 19 vulnerabilities on the Azure Entra ID lab, 11 proven by exploitation, chaining an IT-helpdesk user to Global Admin.
@@ -83,7 +94,7 @@ We do not claim any competing tool cheats. We publish every condition (target, b
 
 ## Totals
 
-Across the 16 named lab reports in the [darkmoon-research](https://github.com/ASCIT31/darkmoon-research) corpus (cloud, infra, iot): **261 findings, 96 of them exploited with proof**. The OWASP Juice Shop web run adds **57 findings** (proof of exploitation per finding). Reproduce or contest any row by reading its linked report and running the target yourself.
+Across the 16 named lab reports in the [darkmoon-research](https://github.com/ASCIT31/darkmoon-research) corpus (cloud, infra, iot): **261 findings, 96 of them exploited with proof**. The OWASP Juice Shop web run adds **57 findings**, 24 of them exploited (33 confirmed). Reproduce or contest any row by reading its linked report and running the target yourself.
 
 ---
 

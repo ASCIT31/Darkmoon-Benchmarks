@@ -155,7 +155,7 @@ The records below predate the 2026 study and follow their own method (findings w
 
 **A reproducible, black-box benchmark of Darkmoon on public, named vulnerable labs, with the full method published and the raw run linked so you can reproduce or contest every number.** 50 specialist AI agents, real exploits chained across web, cloud, infrastructure and IoT, proof for every finding, self-hosted, with the Privacy Gateway tokenizing your real values so the model works on placeholders while your real IPs, hosts and credentials stay on your perimeter.
 
-[**🏆 Leaderboard**](./runs/index.md) · [**📄 Raw Juice Shop run**](./runs/juice-shop-2026-04-26.md) · [**▶️ Watch the 60s demo**](https://youtu.be/1bFRVuMkZzY?si=peKxwuxzbXBnb2zO) · [**Darkmoon autonomous AI penetration testing**](https://dark-moon.org) · [**remediation benchmark (Pro)**](https://dark-moon.org/remediation-benchmark/) · [**visual walkthrough**](https://dark-moon.org/walkthrough/) · [**evidence corpus**](https://github.com/ASCIT31/darkmoon-research)
+[**🏆 Leaderboard**](./runs/index.md) · [**📄 Juice Shop run**](./runs/juice-shop-2026-04-26.md) · [**Anonymised record (demo)**](https://demo.dark-moon.org/project/proj_f3a8d4) · [**Azure AI Foundry checks**](./runs/azure-foundry-provider-validation-2026-11-22.md) · [**▶️ Watch the 60s demo**](https://youtu.be/1bFRVuMkZzY?si=peKxwuxzbXBnb2zO) · [**Darkmoon autonomous AI penetration testing**](https://dark-moon.org) · [**remediation benchmark (Pro)**](https://dark-moon.org/remediation-benchmark/) · [**visual walkthrough**](https://dark-moon.org/walkthrough/) · [**evidence corpus**](https://github.com/ASCIT31/darkmoon-research)
 
 <br>
 
@@ -179,13 +179,15 @@ This benchmark takes the opposite approach. It runs Darkmoon on **public labs an
 
 ### Results, OWASP Juice Shop (black-box)
 
-| Tool | Findings | Critical | High | Med | Low | Time | LLM location | Proof-of-exploit | Reproducible here |
+| Tool | Findings | Critical | High | Med | Low | Exploited / confirmed | Time on record | LLM | Evidence |
 |---|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-| **Darkmoon** | **57** | 8 | 24 | 21 | 4 | 28.5 min | **cloud (Claude Opus 4.6)** | ✅ | summary only, single run ([correction](./runs/juice-shop-2026-04-26.md#correction-2026-11-20)) |
+| **Darkmoon** | **57** | 8 | 24 | 21 | 4 | 24 / 33 | 28.5 min | cloud, Claude Opus 4.6 (declared) | single team run; [anonymised record](https://demo.dark-moon.org/campaign/camp_20260426_3d2f919b?tab=findings), [57 open PRs](https://github.com/ASCIT31/juice-shop/pulls?q=is%3Apr), [update](./runs/juice-shop-2026-04-26.md#update-2026-11-22) |
 
 > **Correction (2026-11-20).** Darkmoon's numbers come from **one run** by the Darkmoon team (`camp_20260426_3d2f`, 57 findings, 28.5 min), not independently reproduced; only a summary page is published, not the raw evidence. The « 14 → 28 → 38 → 44 → 49 → 57 » escalation previously quoted here came from the former demo site, whose earlier campaigns were copies of that one run with shifted dates and hand-set counts; it is not evidence. Details: [`runs/juice-shop-2026-04-26.md`](./runs/juice-shop-2026-04-26.md#correction-2026-11-20).
 
-> Remediation: [ASCIT31/juice-shop](https://github.com/ASCIT31/juice-shop/pulls) holds 57 open remediation pull requests (opened 2026-09-16, none merged, not independently verified); the « 42 of 57 » figure previously quoted here has no supporting record. The remediation-to-PR step is a Darkmoon **Pro** (paid) feature. The open source CLI produces the finding and the proof of exploitation for all 57.
+> **Update (2026-11-22).** The run's anonymised record is now public on [demo.dark-moon.org](https://demo.dark-moon.org/campaign/camp_20260426_3d2f919b?tab=findings) (campaign `camp_20260426_3d2f919b`: 57 findings with evidence, map and possible attack paths), together with **10 other real, complete Juice Shop runs** (28 Jul to 29 Sep 2026, on `claude-opus-4-6` or `claude-sonnet-5`, 5 to 45 findings each; different versions, scopes and models, so not a progression). The record shows **24 of the 57 findings exploited and 33 confirmed**, not proof of exploitation for every finding. [ASCIT31/juice-shop](https://github.com/ASCIT31/juice-shop/pulls?q=is%3Apr) now holds **79 remediation PRs, all open, none merged**: #1 to #57 (one per finding of this run) and #59 to #80 (for the other runs). « 42 of 57 » stays unsupported. The model of this run is not stored in its record (declared Claude Opus 4.6). Details and the full run list: [`runs/juice-shop-2026-04-26.md`](./runs/juice-shop-2026-04-26.md#update-2026-11-22).
+
+> Remediation (2026-11-20, kept as history): [ASCIT31/juice-shop](https://github.com/ASCIT31/juice-shop/pulls) holds 57 open remediation pull requests (opened 2026-09-16, none merged, not independently verified); the « 42 of 57 » figure previously quoted here has no supporting record. The remediation-to-PR step is a Darkmoon **Pro** (paid) feature. The open source CLI produces the finding and the proof of exploitation for all 57.
 
 > This is a living leaderboard, not a marketing page. To add another tool or lab, see [Add your tool](#add-your-tool), open a PR with a named target and a link to raw output, and we will merge honest, reproducible runs.
 
@@ -195,12 +197,12 @@ Juice Shop is the reference web lab. Beyond it, Darkmoon has been run against na
 
 | Surface | Labs | Findings | Exploited |
 |---|:--:|:--:|:--:|
-| web (OWASP Juice Shop) | 1 | 57 | proof per finding |
+| web (OWASP Juice Shop) | 1 | 57 | 24 |
 | cloud (AWS, Azure, GCP) | 8 | 97 | 45 |
 | infrastructure (databases, CI/CD, secret stores, IaC) | 6 | 135 | 47 |
 | iot (OWASP IoTGoat) | 2 | 29 | 4 |
 
-Across the 16 named cloud, infrastructure and IoT reports: **261 findings, 96 of them proved by active exploitation**. The web run adds **57 findings** with proof of exploitation per finding. Every number above is copied from a real report. The full per-lab reports live in the [darkmoon-research](https://github.com/ASCIT31/darkmoon-research) evidence corpus, and the [leaderboard](./runs/index.md) links each row straight to its report. Finding and proof are the open source CLI's job (self-hosted, black-box, privacy-preserving); the web dashboard and automated remediation are Darkmoon **Pro** (paid) features.
+Across the 16 named cloud, infrastructure and IoT reports: **261 findings, 96 of them proved by active exploitation**. The web run adds **57 findings**, 24 of them exploited and 33 confirmed. Every number above is copied from a real report. The full per-lab reports live in the [darkmoon-research](https://github.com/ASCIT31/darkmoon-research) evidence corpus, and the [leaderboard](./runs/index.md) links each row straight to its report. Finding and proof are the open source CLI's job (self-hosted, black-box, privacy-preserving); the web dashboard and automated remediation are Darkmoon **Pro** (paid) features.
 
 [**Open the full leaderboard**](./runs/index.md)
 
@@ -208,17 +210,17 @@ Across the 16 named cloud, infrastructure and IoT reports: **261 findings, 96 of
 
 1. **Target**: OWASP Juice Shop, default docker image, unmodified, black-box (no source given to the tool).
 2. **Conditions**: single target, from a clean environment, wall-clock measured, findings de-duplicated, false positives excluded by manual review before counting (see the verification section below).
-3. **LLM**: the Juice Shop run used **Claude Opus 4.6** (cloud frontier), the same model as the cloud, infrastructure and IoT lab reports; each row's model is labeled in the leaderboard. Darkmoon also runs **fully local** (Ollama/llama.cpp) behind the Privacy Gateway, so target data stays on your own perimeter; local-model coverage depends on the model you run.
+3. **LLM**: the published Darkmoon reports (cloud, infrastructure, IoT) were run on **Claude Opus 4.6** (`claude-opus-4-6`, cloud frontier), and the Juice Shop run is declared on the same model (its campaign record does not store the model); each row's model is labeled in the leaderboard. No Darkmoon result on Claude Opus 4.7 is published here: there is no measured result for it yet. Other models: the [study](#study-llm-driven-pentest-configurations-on-owasp-juice-shop-2026) (16 model labels as recorded) and the [Azure AI Foundry provider checks](./runs/azure-foundry-provider-validation-2026-11-22.md) (smoke checks, not a benchmark). Darkmoon also runs **fully local** (Ollama/llama.cpp) behind the Privacy Gateway, so target data stays on your own perimeter; local-model coverage depends on the model you run.
 4. **Scoring**: count of distinct, exploited or validated vulnerabilities with proof-of-exploitation, mapped to severity (CVSS).
-5. **Reproduce**: `docker run -p 3000:3000 bkimminich/juice-shop`, then run the tool against `http://localhost:3000`. Raw Darkmoon output for the reference run is in [`runs/juice-shop-2026-04-26.md`](./runs/juice-shop-2026-04-26.md), and the full [`/runs`](./runs) index links every lab to its report.
+5. **Reproduce**: `docker run -p 3000:3000 bkimminich/juice-shop`, then run the tool against `http://localhost:3000`. The reference run's summary is in [`runs/juice-shop-2026-04-26.md`](./runs/juice-shop-2026-04-26.md) and its anonymised record (findings and evidence, no session log) on [demo.dark-moon.org](https://demo.dark-moon.org/campaign/camp_20260426_3d2f919b?tab=findings), and the full [`/runs`](./runs) index links every lab to its report.
 
 ### False positives & verification
 
 Every number in this benchmark is a count of **distinct vulnerabilities that survived verification**, not raw tool output. The verification method is:
 
-- **Proof-of-exploitation required.** For the reference Juice Shop run, every one of the 57 findings carries proof of exploitation per finding. Across the cloud, infrastructure and IoT labs, the leaderboard reports a separate, stricter **exploited** count (findings the agent actively exploited with proof) alongside the finding count, so a reader can always see how many findings were merely confirmed versus actively exploited.
+- **Exploited versus confirmed.** For the reference Juice Shop run, the record marks 24 of the 57 findings as exploited and 33 as confirmed (an earlier version of this page said every finding carried proof of exploitation; the record does not support that). Across the cloud, infrastructure and IoT labs, the leaderboard reports a separate, stricter **exploited** count (findings the agent actively exploited with proof) alongside the finding count, so a reader can always see how many findings were merely confirmed versus actively exploited.
 - **Manual false-positive review.** Findings are reviewed by hand and false positives are removed before a run is counted.
-- **De-duplication.** The same underlying issue reported more than once is collapsed to a single finding.
+- **De-duplication.** The same underlying issue reported more than once is collapsed to a single finding in the lab reports. Exception: the 57 Juice Shop records are the agents' findings as pushed, and some overlap (for example three records of the /rest/memories hash leak).
 - **Honest demotions are kept in the record.** Where a finding was over-stated, the report says so rather than inflating the count. For example, on unauthenticated Redis 7.4.10 the RDB-write RCE was demoted as mitigated on Redis 7.x, and that demotion is written into the report.
 - **Every count is traceable.** Each leaderboard row's finding and exploited counts are taken directly from that lab's own Findings Summary table in the linked report, so any number here can be checked against its source.
 
@@ -227,7 +229,7 @@ Every number in this benchmark is a count of **distinct vulnerabilities that sur
 - **One web lab so far.** Juice Shop is a starting point, not the whole story. More web labs (DVWA, WebGoat, kubernetes-goat, GOAD for AD) are being added.
 - **Black-box favors breadth.** This benchmark measures what the tool finds on a target it has never seen, with no source access. That is a different axis from source-assisted (white-box) testing, and this benchmark does not measure the latter.
 - **Not all findings are exploited.** The finding count and the (stricter) exploited count are reported separately for every lab; do not read a finding count as an exploited count.
-- **Durations are only published where recorded.** Only the Juice Shop run page records a wall-clock time (28.5 min). The other lab reports do not record a duration, shown as `n/r` in the leaderboard, and no time is estimated for them.
+- **Durations are only published where recorded.** Only the Juice Shop campaign record stores a duration (28.5 min, the run's own field; it is not a measured wall-clock time). The other lab reports do not record a duration, shown as `n/r` in the leaderboard, and no time is estimated for them.
 - **Numbers move as tools improve.** This is a living document; PRs with dated, reproducible runs are the point.
 
 ### Add your tool
